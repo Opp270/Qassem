@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+body{
+    direction: rtl;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #565656;
+    position: relative;
+}
+
+.content{
+    display: none;
+    grid-template-columns: 30% 1fr;
+    gap: .5em;
+    padding: 1em;
+    animation-name: show;
+    animation-duration: 2s;
+}
+
+@media screen and (max-width: 600px) {
+    .content{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+
+.vid{
+    position: absolute;
+    z-index: 1;
+}
+
+
+.c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speech{
+    flex-direction: column;
+    /* From https://css.glass */
+background: rgba(33, 33, 33, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(33, 33, 33, 0.3);
+}
+
+.speech p{
+    padding: .3em;
+}
+
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+svg{
+    max-width: 600px;
+}
+
+path{
+    opacity: .3;
+}
+
+path:hover{
+    opacity: 1;
+}
+
